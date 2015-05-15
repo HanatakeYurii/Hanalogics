@@ -1,6 +1,6 @@
-package yurii.hanatake.hanalogics.properties;
+package yurii.hanatake.hanalogics.constants;
 
-public class Properties {
+public class ModInfos {
 	//Mod infos
 	public static final String MOD_ID = "hanalogics";
     public static final String MOD_NAME = "Hanalogics";
@@ -12,8 +12,9 @@ public class Properties {
     public static final String MC_VERSIONS = "[" + for_mc + ",)";
     public static final String DEPENDENCIES = "required-after:Forge@[" + forge + ",)";
     
-    //Proxy classes
+    //Classes
     public static final String PROXY_CLIENT_CLASS = "yurii.hanatake.hanalogics.proxy.ClientProxy";
     public static final String PROXY_SERVER_CLASS = "yurii.hanatake.hanalogics.proxy.ServerProxy";
+    public static final String GUI_FACTORY_CLASS = "yurii.hanatake.hanalogics.client.gui.GuiFactory";
 
 }

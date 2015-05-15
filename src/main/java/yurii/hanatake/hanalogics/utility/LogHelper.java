@@ -1,15 +1,16 @@
 package yurii.hanatake.hanalogics.utility;
 
 import org.apache.logging.log4j.Level;
+
 import cpw.mods.fml.common.FMLLog;
-import yurii.hanatake.hanalogics.properties.Properties;
+import yurii.hanatake.hanalogics.constants.ModInfos;
 
 public class LogHelper {
 	
 	
 	public static void log(Level logLevel, Object object)
     {
-        FMLLog.log(Properties.MOD_NAME, logLevel, String.valueOf(object));
+        FMLLog.log(ModInfos.MOD_NAME, logLevel, String.valueOf(object));
     }
 
     public static void all(Object object) { log(Level.ALL, object); }
