@@ -1,20 +1,28 @@
 package yurii.hanatake.hanalogics;
 
+import yurii.hanatake.hanalogics.config.ConfigHandler;
+import yurii.hanatake.hanalogics.properties.Properties;
+import yurii.hanatake.hanalogics.proxy.IProxy;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod (modid=Properties.MODID, name = Properties.MODNAME, version = Properties.MODVERSION, acceptedMinecraftVersions = Properties.MCVERSIONS, dependencies = Properties.DEPENDENCIES)
+@Mod (modid=Properties.MOD_ID, name = Properties.MOD_NAME, version = Properties.MOD_VERSION, acceptedMinecraftVersions = Properties.MC_VERSIONS, dependencies = Properties.DEPENDENCIES)
 public class Hanalogics {
 
-	@Mod.Instance(Properties.MODID)
+	@Mod.Instance(Properties.MOD_ID)
 	public static Hanalogics instance;
+	
+	@SidedProxy (clientSide = Properties.PROXY_CLIENT_CLASS,serverSide = Properties.PROXY_SERVER_CLASS)
+	public static IProxy proxy;
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		//Configs, blocks & items registering
+		ConfigHandler.Init(event.getSuggestedConfigurationFile());
 	}
 	
 	@Mod.EventHandler
