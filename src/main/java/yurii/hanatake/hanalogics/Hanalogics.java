@@ -1,7 +1,9 @@
 package yurii.hanatake.hanalogics;
 
+import yurii.hanatake.hanalogics.blocks.InitBlocks;
 import yurii.hanatake.hanalogics.constants.ModInfos;
 import yurii.hanatake.hanalogics.handler.ConfigHandler;
+import yurii.hanatake.hanalogics.items.InitItems;
 import yurii.hanatake.hanalogics.proxy.IProxy;
 import yurii.hanatake.hanalogics.utility.LogHelper;
 import cpw.mods.fml.common.Mod;
@@ -24,6 +26,13 @@ public class Hanalogics {
 	{
 		//Configs, blocks & items registering
 		ConfigHandler.Init(event.getSuggestedConfigurationFile());
+		
+		
+		
+		InitItems.init();
+		InitBlocks.init();
+		
+		
 		LogHelper.info("Pre-init complete!");
 	}
 	
